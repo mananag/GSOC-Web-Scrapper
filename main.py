@@ -3,8 +3,7 @@ from collections import Counter
 
 import pandas
 
-# df = pandas.read_csv(os.path.join(pathlib.Path(__file__).parent.absolute(), "files", "gsoc2009.csv")).to_dict()
-# print(df["Organizations"])
+
 df = {}
 
 for year in reversed(range(2009, 2021)):
@@ -15,32 +14,44 @@ for year in reversed(range(2009, 2021)):
         dic.append(raw)
     df[year] = dic
 
-combined = {'Organizations': [], 'About': [], 'Technology': [], 'Category': [], 'Topics': []}
+combined = {'Organizations': [], 'About': [], 'Technology': [], 'Category': [], 'Topics': [], 'year': []}
 
 for year in df:
+    print(year)
     for item in df[year]:
-        # print(item)
         for key in combined:
-            try:
-                combined[key].append(item[key])
-            except:
-                combined[key].append(None)
-        # combined['Organizations'].append(item['Organizations'])
+            if(key != 'year'):
+                try:
+                    combined[key].append(item[key])
+                except:
+                    combined[key].append(None)
+        combined['year'].append(year)
+
+def remove(string):
+    return "".join(string.split())
 
 org = Counter()
 for organization in combined['Organizations']:
-    org[organization] += 1
+    org[remove(organization).lower()] += 1
 
 org = dict(org)
 
 final = []
 
 for organization in sorted(org.keys()):
-    for i, j, k, l, m in zip(combined['Organizations'], combined["About"], combined['Technology'], combined['Category'],
-                             combined['Topics']):
-        if organization == i:
-            final.append({"Organizations": organization, "About": j, "Technology": k, "Category": l, "Topics": m,
-                          "Count": org[organization]})
+    for i, j, k, l, m, n in zip(combined['Organizations'], combined["About"], combined['Technology'], combined['Category'],
+                             combined['Topics'], combined['year']):
+        if organization == remove(i).lower():
+            final.append({
+            "Organizations": i,
+            "About": j,
+            "Technology": k,
+            "Category": l,
+            "Topics": m,
+            "Count": org[organization],
+            "Last Appeared": n
+            })
             break
 
-print(pandas.DataFrame(final).to_csv("out.csv"))
+
+pandas.DataFrame(final).to_csv("out.csv")
