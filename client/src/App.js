@@ -6,7 +6,13 @@ function App() {
     return (
         <div>
             <MaterialTable
-            title="GSOC Frequency Viewer"
+                title={<div>
+                    <h1>GSOC Organizations Frequency Viewer</h1>
+                    <p>
+                        A simple project to help GSOC aspirants to plan the organizations in which they want to contribute
+                        to participate in GSOC
+                    </p>
+                </div>}
             columns={[
                 {title: 'Organizations', field: 'Organizations'},
                 {title: 'About', field: 'About'},
@@ -28,6 +34,6 @@ function App() {
         </div>
 
     )
-}
+};
 
 export default App;
