@@ -5,7 +5,7 @@ import pandas
 
 df = {}
 
-for year in reversed(range(2009, 2021)):
+for year in reversed(range(2009, 2022)):
     filename = "files//gsoc" + str(year) + ".csv"
     r = csv.DictReader(open(filename))
     dic = []
