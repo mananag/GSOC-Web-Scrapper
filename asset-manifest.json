@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/GSOC-Web-Scrapper/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/GSOC-Web-Scrapper/static/js/main.184ca4b1.chunk.js",
-    "main.js.map": "/GSOC-Web-Scrapper/static/js/main.184ca4b1.chunk.js.map",
+    "main.js": "/GSOC-Web-Scrapper/static/js/main.062395d6.chunk.js",
+    "main.js.map": "/GSOC-Web-Scrapper/static/js/main.062395d6.chunk.js.map",
     "runtime-main.js": "/GSOC-Web-Scrapper/static/js/runtime-main.182b12b9.js",
     "runtime-main.js.map": "/GSOC-Web-Scrapper/static/js/runtime-main.182b12b9.js.map",
     "static/js/2.b9320f42.chunk.js": "/GSOC-Web-Scrapper/static/js/2.b9320f42.chunk.js",
@@ -26,6 +26,6 @@
     "static/js/runtime-main.182b12b9.js",
     "static/js/3.61e08385.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.184ca4b1.chunk.js"
+    "static/js/main.062395d6.chunk.js"
   ]
 }
